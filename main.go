@@ -10,7 +10,11 @@ func main() {
 
 	router := gin.Default()
 
-	router.GET("/", controllers.GetProducts)
+	router.GET("/products", controllers.GetProducts)
+	router.POST("/products", controllers.CreateProducts)
+	router.GET("/product/:id", controllers.GetProduct)
+	router.PATCH("/product/:id", controllers.UpdateProduct)
+	router.DELETE("/product/:id", controllers.DeleteProduct)
 
 	router.Run()
 }
